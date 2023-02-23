@@ -318,25 +318,28 @@
 		<script src="js/page.3a0791a3.js"></script>
 		<script type="text/javascript" src="js/stats.js" charset="UTF-8">
 		</script>
-    <script>
-        $('.copy-btn').click(function () {
-            let id = $(this).attr('id')
-            copy('#' + id)
-        })
-        function copy(id) {
-            let clipboard = new ClipboardJS(id);
-            clipboard.on('success', function (e) {
-                console.log(e);
-                alert('Smj.Love.C提醒：复制成功，请前往tvbox接口粘贴')
-                clipboard.destroy();//解决多次弹窗问题
-            });
-            clipboard.on('error', function (e) {
-                console.log(e);
-                alert('请重新复制')
-                clipboard.destroy();//解决多次弹窗问题
-            });
-        }
-    </script>
+<!--以下为点击复制调用js-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+<script>
+	$('.copy-btn').click(function () {
+		let id = $(this).attr('id')
+		copy('#' + id)
+	})
+	function copy(id) {
+		let clipboard = new ClipboardJS(id);
+		clipboard.on('success', function (e) {
+			console.log(e);
+			alert('肥猫提醒：复制成功，请前往tvbox接口粘贴')
+			clipboard.destroy();//解决多次弹窗问题
+		});
+		clipboard.on('error', function (e) {
+			console.log(e);
+			alert('请重新复制')
+			clipboard.destroy();//解决多次弹窗问题
+		});
+	}
+</script>
 <!--在线播放器API-->
 <script src="https://myhkw.cn/api/player/167013822195" id="myhk" key="167013822195" m="1"></script>
 <!--雪花API-->
